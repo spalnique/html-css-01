@@ -105,7 +105,7 @@ collectionItems.forEach((item, index) => {
   if (selectedSource) {
     const srcsetParts = selectedSource.srcset.split(', ');
     const newSrc =
-      baseImageUrl + srcsetParts[srcsetParts.length - 2].split(' ')[0];
+      baseImageUrl + srcsetParts[srcsetParts.length - 1].split(' ')[0];
     const newWidth = img.width * 1.5;
     const newHeight = img.height * 1.5;
 
