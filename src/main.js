@@ -103,8 +103,9 @@ collectionItems.forEach((item, index) => {
 
   // Construct the new image source URL
   if (selectedSource) {
-    const srcsetParts = selectedSource.srcset.split(' ');
-    const newSrc = baseImageUrl + srcsetParts[srcsetParts.length - 1]; // Get the last part
+    const srcsetParts = selectedSource.srcset.split(', ');
+    const newSrc =
+      baseImageUrl + srcsetParts[srcsetParts.length - 2].split(' ')[0];
     const newWidth = img.width * 1.5;
     const newHeight = img.height * 1.5;
 
