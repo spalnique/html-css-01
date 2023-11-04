@@ -87,38 +87,37 @@ const lightboxClose = document.getElementById('lightbox-close');
 collectionItems.forEach((item, index) => {
   const img = item.querySelector('.collection-img');
   const sources = item.querySelectorAll('source');
-  const baseImageUrl = `${window.location.origin}/assets/`;
+  const baseImageUrl = `${window.location.origin}`;
 
   // Find the source with the desired media condition and 3x resolution
   let selectedSource = null;
   for (const source of sources) {
     if (
       source.media === '(min-width: 1440px)' &&
-      source.srcset.includes('1440px3x')
+      source.srcset.includes('3x')
     ) {
       selectedSource = source;
       break;
     }
   }
 
-  // Get the image source from the selected source
-  const newSrc =
-    baseImageUrl + selectedSource.srcset.match(/\/assets\/(.+3x)/)[1];
-  console.log(baseImageUrl);
-  console.log(newSrc);
+  // Construct the new image source URL
+  if (selectedSource) {
+    const srcsetParts = selectedSource.srcset.split(' ');
+    const newSrc = baseImageUrl + srcsetParts[srcsetParts.length - 1]; // Get the last part
+    const newWidth = img.width * 1.5;
+    const newHeight = img.height * 1.5;
 
-  const newWidth = img.width * 1.5;
-  const newHeight = img.height * 1.5;
-
-  img.addEventListener('click', () => {
-    lightboxImage.src = newSrc;
-    lightboxImage.alt = img.alt;
-    lightboxImage.width = newWidth;
-    lightboxImage.height = newHeight;
-    lightboxContainer.style.pointerEvents = 'auto';
-    lightboxContainer.style.visibility = 'visible';
-    lightboxContainer.style.opacity = '1';
-  });
+    img.addEventListener('click', () => {
+      lightboxImage.src = newSrc;
+      lightboxImage.alt = img.alt;
+      lightboxImage.width = newWidth;
+      lightboxImage.height = newHeight;
+      lightboxContainer.style.pointerEvents = 'auto';
+      lightboxContainer.style.visibility = 'visible';
+      lightboxContainer.style.opacity = '1';
+    });
+  }
 });
 
 function closeLightbox() {
