@@ -1,3 +1,5 @@
+// ============ Mobile and tablet navigation menu toggle ============
+
 (() => {
   const nav_menu = {
     openMenuButton: document.querySelector('[data-menu-open]'),
@@ -14,6 +16,8 @@
     nav_menu.menu.classList.toggle('is-open');
   }
 })();
+
+// ============ Smooth Scroll for Anchor Links ============
 
 document.addEventListener('DOMContentLoaded', function () {
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
@@ -73,6 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+// ============ LightBox ============
+
 const collectionItems = document.querySelectorAll('.collection-item');
 const lightboxContainer = document.getElementById('lightbox-container');
 const lightboxImage = document.getElementById('lightbox-image');
@@ -80,10 +86,27 @@ const lightboxClose = document.getElementById('lightbox-close');
 
 collectionItems.forEach((item, index) => {
   const img = item.querySelector('.collection-img');
-  //   const newSrc = img.src.slice(0, -6) + '3x.jpg';
-  const newSrc = img.src
-    .replace(/img\/desk1440\/Collection/g, 'assets')
-    .replace(/px1x/g, 'px3x');
+  const sources = item.querySelectorAll('source');
+  const baseImageUrl = `${window.location.origin}/assets/`;
+
+  // Find the source with the desired media condition and 3x resolution
+  let selectedSource = null;
+  for (const source of sources) {
+    if (
+      source.media === '(min-width: 1440px)' &&
+      source.srcset.includes('1440px3x')
+    ) {
+      selectedSource = source;
+      break;
+    }
+  }
+
+  // Get the image source from the selected source
+  const newSrc =
+    baseImageUrl + selectedSource.srcset.match(/\/assets\/(.+3x)/)[1];
+  console.log(baseImageUrl);
+  console.log(newSrc);
+
   const newWidth = img.width * 1.5;
   const newHeight = img.height * 1.5;
 
