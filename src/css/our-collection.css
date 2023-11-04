@@ -53,6 +53,10 @@
     letter-spacing: 0.05em;
 }
 
+.collection-desc {
+    display: none;
+}
+
 #lightbox-container {
     display: none;
 }
@@ -134,7 +138,8 @@ screen and (min-device-pixel-ratio: 3) {
         transition: color 300ms ease-in-out;
     }
 
-    /* ====== Image preview ====== */
+    /* ====== Lightbox Image preview ====== */
+
     #lightbox-container {
         display: block;
         pointer-events: none;
@@ -170,6 +175,7 @@ screen and (min-device-pixel-ratio: 3) {
         padding: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         display: flex;
+        flex-wrap: wrap;
         gap: 25px;
         padding: 15px;
         width: 80vw;
@@ -179,6 +185,8 @@ screen and (min-device-pixel-ratio: 3) {
         border-radius: 4px;
         background-color: #ecd979;
         flex-shrink: 0;
+        width: 65%;
+        margin: 0 auto;
     }
 
     #lightbox-close {
@@ -199,9 +207,50 @@ screen and (min-device-pixel-ratio: 3) {
         padding: 30px 0;
     }
 
-    .lightbox-text {}
+    .lightbox-text {
+        display: flex;
+    }
 
-    .lightbox-subtitle {}
+    div.lightbox-text {
+        align-items: center;
+    }
+
+    .lightbox-text span:first-child {
+        color: #fcf9f9;
+        font-weight: 500;
+        min-width: 140px;
+    }
+
+    .size-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+        
+    }
+
+    .size-item {
+        background-color: #ECD979;
+        color: #1c2225;
+        border-radius: 50%;
+        border: 1px solid black;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 4px grey;
+        flex-basis: ((100% - 3 * 20px) / 4);
+    }
+
+    .lightbox-subtitle {
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-size: 18px;
+        padding-left: 140px;
+    }
 
     .lightbox-anchor-link {
         align-self: center;

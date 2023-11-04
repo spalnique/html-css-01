@@ -83,6 +83,9 @@ const collectionItems = document.querySelectorAll('.collection-item');
 const lightboxContainer = document.getElementById('lightbox-container');
 const lightboxImage = document.getElementById('lightbox-image');
 const lightboxClose = document.getElementById('lightbox-close');
+const lightboxOrderButton = document.querySelector('.lightbox-anchor-link');
+const lightboxTitle = document.querySelector('.lightbox-subtitle');
+const lightboxDesc = document.querySelector('.lightbox-desc');
 
 collectionItems.forEach((item, index) => {
   const img = item.querySelector('.collection-img');
@@ -114,6 +117,11 @@ collectionItems.forEach((item, index) => {
       lightboxImage.alt = img.alt;
       lightboxImage.width = newWidth;
       lightboxImage.height = newHeight;
+      lightboxTitle.textContent = item.querySelector(
+        '.collection-subtitle'
+      ).textContent;
+      lightboxDesc.textContent =
+        item.querySelector('.collection-desc').textContent;
       lightboxContainer.style.pointerEvents = 'auto';
       lightboxContainer.style.visibility = 'visible';
       lightboxContainer.style.opacity = '1';
@@ -127,6 +135,7 @@ function closeLightbox() {
   lightboxContainer.style.opacity = '0';
 }
 
+lightboxOrderButton.addEventListener('click', closeLightbox);
 lightboxClose.addEventListener('click', closeLightbox);
 lightboxContainer.addEventListener('click', event => {
   if (event.target === lightboxContainer) {
