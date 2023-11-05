@@ -140,6 +140,11 @@ screen and (min-device-pixel-ratio: 3) {
 
     /* ====== Lightbox Image preview ====== */
 
+    .rectangular {
+        background-color: #ECD979;
+        border: 3px solid red;
+    }
+
     #lightbox-container {
         display: block;
         pointer-events: none;
@@ -212,7 +217,6 @@ screen and (min-device-pixel-ratio: 3) {
     #lightbox-image {
         border-radius: 4px;
         background-color: #ecd979;
-        flex-shrink: 0;
     }
 
     #lightbox-close {
