@@ -44,6 +44,7 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     font-size: 14px;
+    cursor: pointer;
 }
 
 .collection-text {
@@ -51,6 +52,7 @@
     font-size: 14px;
     line-height: 1;
     letter-spacing: 0.05em;
+    cursor: pointer;
 }
 
 .collection-desc {
@@ -110,6 +112,7 @@ screen and (min-device-pixel-ratio: 3) {
     .collection-item {
         width: calc((100% - 20px) / 2);
         transition: scale 300ms ease-in-out;
+        cursor: pointer;
     }
 
     .collection-item:hover,
@@ -172,7 +175,7 @@ screen and (min-device-pixel-ratio: 3) {
             57px 150px,
             162px 242px;
         background-position:
-            right -20px bottom 40%,
+            right -20px bottom 25%,
             left 0 bottom 0;
         background-repeat: no-repeat;
         position: absolute;
@@ -212,7 +215,6 @@ screen and (min-device-pixel-ratio: 3) {
 
     #lightbox-image {
         border-radius: 4px;
-        background-color: #ecd979;
         width: 100%;
     }
 
@@ -266,8 +268,6 @@ screen and (min-device-pixel-ratio: 3) {
         width: 300px;
     }
 
-    .lightbox-text p:last-child {}
-
     .size-list {
         display: flex;
         justify-content: center;
@@ -286,7 +286,6 @@ screen and (min-device-pixel-ratio: 3) {
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 0 0 4px grey;
         flex-basis: ((100% - 3 * 20px) / 4);
         transition: all 100ms ease-in-out;
         cursor: pointer;
@@ -308,7 +307,6 @@ screen and (min-device-pixel-ratio: 3) {
         text-transform: uppercase;
         font-size: 18px;
         padding: 10px 0;
-        text-align: center;
     }
 
     .lightbox-anchor-link {
@@ -394,12 +392,8 @@ screen and (min-device-pixel-ratio: 3) {
             url(../img/desktop/Collection/collection-elements-desk1x.png),
             url(../img/desktop/Order/order-elements-desk1x.png);
         background-size:
-            169px 300px,
-            289px 484px;
-        display: block;
-        padding: 15px;
-        max-width: 80vw;
-        max-height: 80vh;
+            85px 150px,
+            145px 242px;
     }
 
     @media (min-device-pixel-ratio: 2),
@@ -420,5 +414,32 @@ screen and (min-device-pixel-ratio: 3) {
                 url(../img/desktop/Collection/collection-elements-desk3x.png),
                 url(../img/desktop/Order/order-elements-desk3x.png);
         }
+    }
+
+    /* #lightbox-image {
+        max-width: 150%;
+    } */
+
+    .lightbox-image-wrapper {
+        min-width: 650px;
+    }
+
+    .size-list {
+        padding: 20px 0;
+        gap: 15px;
+    }
+
+    .size-item {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .lightbox-text {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 16px;
+        min-width: 250px;
     }
 }
