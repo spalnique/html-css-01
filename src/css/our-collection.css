@@ -165,17 +165,22 @@ screen and (min-device-pixel-ratio: 3) {
     }
 
     #lightbox-content {
-        background-image: url(../img/tablet/Collection/collection-elements-tab1x.png);
-        background-size: 57px 150px;
-        background-position: right -10px bottom 50%;
+        background-image:
+            url(../img/tablet/Collection/collection-elements-tab1x.png),
+            url(../img/tablet/Order/order-elements-tab1x.png);
+        background-size:
+            57px 150px,
+            162px 242px;
+        background-position:
+            right -20px bottom 50%,
+            left 0 bottom 0;
         background-repeat: no-repeat;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: #1c2225;
+        background-color: #1c2225;
         border-radius: 4px;
-        padding: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         display: flex;
         gap: 25px;
@@ -187,10 +192,9 @@ screen and (min-device-pixel-ratio: 3) {
     (min-resolution: 144dpi),
     (min-resolution: 2dppx) {
         #lightbox-content {
-            background-image: url(../img/tablet/Collection/collection-elements-tab2x.png);
-            background-size: 57px 150px;
-            background-position: right -10px bottom 50%;
-            background-repeat: no-repeat;
+            background-image:
+                url(../img/tablet/Collection/collection-elements-tab2x.png),
+                url(../img/tablet/Order/order-elements-tab2x.png);
         }
     }
 
@@ -198,7 +202,9 @@ screen and (min-device-pixel-ratio: 3) {
     (min-resolution: 216dpi),
     (min-resolution: 3dppx) {
         #lightbox-content {
-            background-image: url(../img/tablet/Collection/collection-elements-tab3x.png);
+            background-image:
+                url(../img/tablet/Collection/collection-elements-tab3x.png),
+                url(../img/tablet/Order/order-elements-tab3x.png);
         }
     }
 
@@ -241,7 +247,7 @@ screen and (min-device-pixel-ratio: 3) {
     .lightbox-text p:first-child {
         color: #fcf9f9;
         font-weight: 500;
-        min-width: 110px;
+        min-width: 95px;
     }
 
     .lightbox-text p:last-child {}
@@ -252,7 +258,6 @@ screen and (min-device-pixel-ratio: 3) {
         justify-content: center;
         gap: 10px;
         /* width: 130px; */
-        margin-top: 20px;
         margin-bottom: auto;
     }
 
