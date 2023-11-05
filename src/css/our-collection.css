@@ -140,11 +140,6 @@ screen and (min-device-pixel-ratio: 3) {
 
     /* ====== Lightbox Image preview ====== */
 
-    .rectangular {
-        background-color: #ECD979;
-        border: 3px solid red;
-    }
-
     #lightbox-container {
         display: block;
         pointer-events: none;
@@ -190,6 +185,7 @@ screen and (min-device-pixel-ratio: 3) {
         display: flex;
         gap: 25px;
         padding: 15px;
+        min-width: 75vw;
         max-width: 90vw;
         max-height: 90vh;
     }
@@ -217,14 +213,15 @@ screen and (min-device-pixel-ratio: 3) {
     #lightbox-image {
         border-radius: 4px;
         background-color: #ecd979;
+        width: 100%;
     }
 
     #lightbox-close {
         position: absolute;
-        top: 25px;
-        right: 25px;
+        top: 15px;
+        right: 15px;
         background: transparent;
-        stroke: #1c2225;
+        stroke: #ecd979;
         width: 26px;
         height: 26px;
         transition: transform 100ms ease-in-out;
@@ -235,12 +232,20 @@ screen and (min-device-pixel-ratio: 3) {
         transform: scale(0.9);
     }
 
+    .lightbox-image-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        min-width: 320px;
+        min-height: 344px;
+    }
+
     .lightbox-content-wrapper {
         display: flex;
         flex-direction: column;
         gap: 10px;
         padding-right: 40px;
-        width: calc((100% - 25px) / 2);
+        width: 100%;
     }
 
     .lightbox-text {
@@ -248,13 +253,17 @@ screen and (min-device-pixel-ratio: 3) {
         flex-direction: column;
         gap: 10px;
         font-size: 14px;
-        min-width: 300px;
+        min-width: 250px;
     }
 
     .lightbox-text p:first-child {
         color: #fcf9f9;
         font-weight: 500;
         min-width: 95px;
+    }
+
+    .collection-desc {
+        width: 300px;
     }
 
     .lightbox-text p:last-child {}
@@ -380,7 +389,7 @@ screen and (min-device-pixel-ratio: 3) {
     }
 
     #lightbox-content {
-        position: relative;
+        position: absolute;
         background-image:
             url(../img/desktop/Collection/collection-elements-desk1x.png),
             url(../img/desktop/Order/order-elements-desk1x.png);
@@ -411,14 +420,5 @@ screen and (min-device-pixel-ratio: 3) {
                 url(../img/desktop/Collection/collection-elements-desk3x.png),
                 url(../img/desktop/Order/order-elements-desk3x.png);
         }
-    }
-
-    #lightbox-image {}
-
-    .lightbox-content-wrapper {
-        position: absolute;
-        background-color: rgba(28, 34, 37, 0.6);
-        transform: translateY(15px);
-        padding: 0;
     }
 }

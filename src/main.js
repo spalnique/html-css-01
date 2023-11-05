@@ -121,7 +121,8 @@ collectionItems.forEach((item, index) => {
       lightboxTitle.textContent = item.querySelector(
         '.collection-subtitle'
       ).textContent;
-      lightboxDesc.textContent = item.querySelector('.collection-desc').textContent;
+      lightboxDesc.textContent =
+        item.querySelector('.collection-desc').textContent;
       lightboxContainer.style.pointerEvents = 'auto';
       lightboxContainer.style.visibility = 'visible';
       lightboxContainer.style.opacity = '1';
