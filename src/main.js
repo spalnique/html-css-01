@@ -84,6 +84,7 @@ const lightboxContainer = document.getElementById('lightbox-container');
 const lightboxImage = document.getElementById('lightbox-image');
 const lightboxClose = document.getElementById('lightbox-close');
 const lightboxOrderButton = document.querySelector('.lightbox-anchor-link');
+const lightboxBackdrop = document.getElementById('lightbox-backdrop');
 const lightboxTitle = document.querySelector('.lightbox-subtitle');
 const lightboxDesc = document.querySelector('.lightbox-desc');
 
@@ -120,8 +121,7 @@ collectionItems.forEach((item, index) => {
       lightboxTitle.textContent = item.querySelector(
         '.collection-subtitle'
       ).textContent;
-      lightboxDesc.textContent =
-        item.querySelector('.collection-desc').textContent;
+      lightboxDesc.textContent = item.querySelector('.collection-desc').textContent;
       lightboxContainer.style.pointerEvents = 'auto';
       lightboxContainer.style.visibility = 'visible';
       lightboxContainer.style.opacity = '1';
@@ -135,6 +135,7 @@ function closeLightbox() {
   lightboxContainer.style.opacity = '0';
 }
 
+lightboxBackdrop.addEventListener('click', closeLightbox);
 lightboxOrderButton.addEventListener('click', closeLightbox);
 lightboxClose.addEventListener('click', closeLightbox);
 lightboxContainer.addEventListener('click', event => {

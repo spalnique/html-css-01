@@ -162,31 +162,52 @@ screen and (min-device-pixel-ratio: 3) {
         width: 100%;
         height: 100%;
         cursor: pointer;
-        filter: blur(5);
     }
 
     #lightbox-content {
+        background-image: url(../img/tablet/Collection/collection-elements-tab1x.png);
+        background-size: 57px 150px;
+        background-position: right -10px bottom 50%;
+        background-repeat: no-repeat;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         background: #1c2225;
-        border-radius: 5px;
+        border-radius: 4px;
         padding: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         display: flex;
-        flex-wrap: wrap;
         gap: 25px;
         padding: 15px;
-        width: 80vw;
+        width: 90vw;
+    }
+
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 144dpi),
+    (min-resolution: 2dppx) {
+        #lightbox-content {
+            background-image: url(../img/tablet/Collection/collection-elements-tab2x.png);
+            background-size: 57px 150px;
+            background-position: right -10px bottom 50%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    @media (min-device-pixel-ratio: 3),
+    (min-resolution: 216dpi),
+    (min-resolution: 3dppx) {
+        #lightbox-content {
+            background-image: url(../img/tablet/Collection/collection-elements-tab3x.png);
+        }
     }
 
     #lightbox-image {
         border-radius: 4px;
         background-color: #ecd979;
         flex-shrink: 0;
-        width: 65%;
-        margin: 0 auto;
+        width: 45%;
+        height: 45%;
     }
 
     #lightbox-close {
@@ -200,33 +221,39 @@ screen and (min-device-pixel-ratio: 3) {
         transition: transform 100ms ease-in-out;
     }
 
+    #lightbox-close:hover,
+    #lightbox-close:focus {
+        transform: scale(0.9);
+    }
+
     .lightbox-content-wrapper {
         display: flex;
         flex-direction: column;
-        gap: 40px;
-        padding: 30px 0;
+        gap: 10px;
+        padding-right: 40px;
     }
 
     .lightbox-text {
         display: flex;
+        font-size: 14px;
     }
 
-    div.lightbox-text {
-        align-items: center;
-    }
-
-    .lightbox-text span:first-child {
+    .lightbox-text p:first-child {
         color: #fcf9f9;
         font-weight: 500;
-        min-width: 140px;
+        min-width: 110px;
     }
+
+    .lightbox-text p:last-child {}
 
     .size-list {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
-        justify-content: space-between;
-        
+        justify-content: center;
+        gap: 10px;
+        /* width: 130px; */
+        margin-top: 20px;
+        margin-bottom: auto;
     }
 
     .size-item {
@@ -234,13 +261,24 @@ screen and (min-device-pixel-ratio: 3) {
         color: #1c2225;
         border-radius: 50%;
         border: 1px solid black;
-        width: 50px;
-        height: 50px;
+        width: 25px;
+        height: 25px;
+        font-size: 8px;
         display: flex;
         justify-content: center;
         align-items: center;
         box-shadow: 0 0 4px grey;
         flex-basis: ((100% - 3 * 20px) / 4);
+        transition: all 100ms ease-in-out;
+        cursor: pointer;
+    }
+
+    .size-item:hover,
+    .size-item:focus {
+        scale: 1.2;
+        background-color: transparent;
+        color: #ECD979;
+        border-color: #ECD979;
     }
 
     .lightbox-subtitle {
@@ -249,12 +287,13 @@ screen and (min-device-pixel-ratio: 3) {
         letter-spacing: 0.05em;
         text-transform: uppercase;
         font-size: 18px;
-        padding-left: 140px;
+        padding-top: 10px;
+        text-align: center;
+        margin-bottom: 15px;
     }
 
     .lightbox-anchor-link {
-        align-self: center;
-        margin-top: auto;
+        margin: auto auto 0;
         width: fit-content;
         transition: border-color 300ms ease-in-out;
     }
