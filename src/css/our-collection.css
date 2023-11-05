@@ -173,10 +173,11 @@ screen and (min-device-pixel-ratio: 3) {
             url(../img/tablet/Order/order-elements-tab1x.png);
         background-size:
             57px 150px,
-            162px 242px;
+            81px 121px;
         background-position:
-            right -20px bottom 25%,
-            left 0 bottom 0;
+            left 0 bottom 0,
+            right -20px bottom 25%;
+
         background-repeat: no-repeat;
         position: absolute;
         top: 50%;
@@ -266,6 +267,12 @@ screen and (min-device-pixel-ratio: 3) {
 
     .collection-desc {
         width: 300px;
+    }
+
+    .lightbox-content-wrapper .collection-text {
+        color: #ecd979;
+        cursor: default;
+        margin-top: 30px;
     }
 
     .size-list {
@@ -391,9 +398,6 @@ screen and (min-device-pixel-ratio: 3) {
         background-image:
             url(../img/desktop/Collection/collection-elements-desk1x.png),
             url(../img/desktop/Order/order-elements-desk1x.png);
-        background-size:
-            85px 150px,
-            145px 242px;
     }
 
     @media (min-device-pixel-ratio: 2),
