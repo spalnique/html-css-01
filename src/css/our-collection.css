@@ -185,8 +185,8 @@ screen and (min-device-pixel-ratio: 3) {
         display: flex;
         gap: 25px;
         padding: 15px;
-        width: 90vw;
-        height: 90vh;
+        max-width: 90vw;
+        max-height: 90vh;
     }
 
     @media (min-device-pixel-ratio: 2),
