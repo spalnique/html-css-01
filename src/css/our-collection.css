@@ -212,7 +212,8 @@ screen and (min-device-pixel-ratio: 3) {
     #lightbox-image {
         border-radius: 4px;
         background-color: #ecd979;
-        flex-shrink: 0;
+        width: calc((100% - 25px) / 2);
+        /* flex-shrink: 0; */
     }
 
     #lightbox-close {
@@ -236,6 +237,7 @@ screen and (min-device-pixel-ratio: 3) {
         flex-direction: column;
         gap: 10px;
         padding-right: 40px;
+        width: calc((100% - 25px) / 2);
     }
 
     .lightbox-text {
