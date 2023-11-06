@@ -426,10 +426,6 @@ screen and (min-device-pixel-ratio: 3) {
         }
     }
 
-    /* #lightbox-image {
-        max-width: 150%;
-    } */
-
     .lightbox-image-wrapper {
         min-width: 650px;
     }
@@ -455,5 +451,10 @@ screen and (min-device-pixel-ratio: 3) {
         gap: 10px;
         font-size: 16px;
         min-width: 250px;
+    }
+
+    .lightbox-item-price {
+        margin-bottom: 45px;
+        font-size: 32px;
     }
 }

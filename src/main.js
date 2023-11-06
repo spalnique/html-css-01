@@ -87,6 +87,7 @@ const lightboxOrderButton = document.querySelector('.lightbox-anchor-link');
 const lightboxBackdrop = document.getElementById('lightbox-backdrop');
 const lightboxTitle = document.querySelector('.lightbox-subtitle');
 const lightboxDesc = document.querySelector('.lightbox-desc');
+const lightboxPrice = document.querySelector('.lightbox-item-price');
 
 collectionItems.forEach((item, index) => {
   const img = item.querySelector('.collection-img');
@@ -123,6 +124,8 @@ collectionItems.forEach((item, index) => {
       ).textContent;
       lightboxDesc.textContent =
         item.querySelector('.collection-desc').textContent;
+      lightboxPrice.textContent =
+        item.querySelector('.collection-text').textContent;
       lightboxContainer.style.pointerEvents = 'auto';
       lightboxContainer.style.visibility = 'visible';
       lightboxContainer.style.opacity = '1';
