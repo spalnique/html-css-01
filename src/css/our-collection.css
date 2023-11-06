@@ -175,7 +175,7 @@ screen and (min-device-pixel-ratio: 3) {
             57px 150px,
             81px 121px;
         background-position:
-            left 0 bottom 0,
+            left 0 top 20px,
             right -20px bottom 25%;
 
         background-repeat: no-repeat;
@@ -259,20 +259,18 @@ screen and (min-device-pixel-ratio: 3) {
         min-width: 250px;
     }
 
-    .lightbox-text p:first-child {
-        color: #fcf9f9;
-        font-weight: 500;
-        min-width: 95px;
-    }
-
     .collection-desc {
         width: 300px;
     }
 
-    .lightbox-content-wrapper .collection-text {
+    .lightbox-item-price {
+        justify-self: center;
         color: #ecd979;
         cursor: default;
-        margin-top: 30px;
+        margin-top: auto;
+        margin-bottom: 20px;
+        align-self: center;
+        font-size: 26px;
     }
 
     .size-list {
@@ -307,6 +305,14 @@ screen and (min-device-pixel-ratio: 3) {
         border-color: #ECD979;
     }
 
+    .lightbox-hand-made {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        max-width: 200px;
+        margin: 15px auto 0;
+    }
+
     .lightbox-subtitle {
         font-weight: 500;
         line-height: normal;
@@ -317,7 +323,7 @@ screen and (min-device-pixel-ratio: 3) {
     }
 
     .lightbox-anchor-link {
-        margin: auto auto 0;
+        margin: 0 auto;
         width: fit-content;
         transition: border-color 300ms ease-in-out;
     }
@@ -426,6 +432,10 @@ screen and (min-device-pixel-ratio: 3) {
 
     .lightbox-image-wrapper {
         min-width: 650px;
+    }
+
+    .lightbox-content-wrapper .collection-text {
+        margin-top: 30px;
     }
 
     .size-list {
