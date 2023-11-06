@@ -177,7 +177,6 @@ screen and (min-device-pixel-ratio: 3) {
         background-position:
             left 0 top 20px,
             right -20px bottom 25%;
-
         background-repeat: no-repeat;
         position: absolute;
         top: 50%;
@@ -188,10 +187,10 @@ screen and (min-device-pixel-ratio: 3) {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         display: flex;
         gap: 25px;
-        padding: 15px;
+        padding: 15px 15px 35px;
         min-width: 75vw;
         max-width: 90vw;
-        max-height: 90vh;
+        height: fit-content;
     }
 
     @media (min-device-pixel-ratio: 2),
@@ -424,10 +423,6 @@ screen and (min-device-pixel-ratio: 3) {
                 url(../img/desktop/Collection/collection-elements-desk3x.png),
                 url(../img/desktop/Order/order-elements-desk3x.png);
         }
-    }
-
-    .lightbox-image-wrapper {
-        min-width: 650px;
     }
 
     .lightbox-content-wrapper .collection-text {
